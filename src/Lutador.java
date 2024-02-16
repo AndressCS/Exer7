@@ -11,14 +11,14 @@ public class Lutador {
     private int empates;
     //Atributos Especiais
     public Lutador() {
-        this.nome = no;
-        this.nacionalidade = na;
-        this.idade = id;
-        this.altura = al;
-        this.setPeso(pe);
-        this.vitorias = vi;
-        this.derrotas = de;
-        this.empates = em;
+        this.nome = nome;
+        this.nacionalidade = nacionalidade;
+        this.idade = idade;
+        this.altura = altura;
+        this.setPeso(peso);
+        this.vitorias = vitorias;
+        this.derrotas = derrotas;
+        this.empates = empates;
     }
 
     public String getNome() {
@@ -59,21 +59,22 @@ public class Lutador {
 
     public void setPeso(float peso) {
         this.peso = peso;
+        this.setCategoria();
     }
 
     public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(String categoria) {
-        if(this.getPeso()<52.2){
-            this.setCategoria("Invalido");
-        }else if(this.getPeso()<=70.3){
-            this.setCategoria("Leve");
-        }else if(this.getPeso()<= 83.9){
-            this.setCategoria("Médio");
-        }else if(this.getPeso()<=120.2){
-            this.setCategoria("Pesado");
+    public void setCategoria() {
+        if(this.peso<52.2){
+            this.categoria = "Invalido";
+        }else if(this.peso <= 70.3){
+            this.categoria = "Leve";
+        }else if(this.peso <= 83.9){
+            this.categoria = "Médio";
+        }else if(this.peso <= 120.2){
+            this.categoria = "Pesado";
         }
     }
 
@@ -120,13 +121,16 @@ public class Lutador {
         System.out.println(getEmpates() + "Empates");
     }
     public void ganharLuta(){
-        setVitorias(getVitorias() + 1);
+
+        this.setVitorias(this.getVitorias() + 1);
     }
     public void perderLuta(){
-        setDerrotas(getDerrotas() + 1);
+
+        this.setDerrotas(this.getDerrotas() + 1);
     }
     public void empatarLuta(){
-        setEmpates(getEmpates() + 1);
+
+        this.setEmpates(this.getEmpates() + 1);
     }
 
 }
