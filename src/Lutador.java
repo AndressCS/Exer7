@@ -10,7 +10,7 @@ public class Lutador {
     private int derrotas;
     private int empates;
     //Atributos Especiais
-    public Lutador() {
+    public Lutador(String nome, String nacionalidade, int idade, float altura, float peso, int vitorias, int derrotas, int empates) {
         this.nome = nome;
         this.nacionalidade = nacionalidade;
         this.idade = idade;
@@ -116,9 +116,9 @@ public class Lutador {
     public void status(){
         System.out.println(this.getNome());
         System.out.println("É um peso " + this.getCategoria());
-        System.out.println(this.getVitorias() + "vitorias");
-        System.out.println(this.getDerrotas() + "Derrotas");
-        System.out.println(this.getEmpates() + "Empates");
+        System.out.println(this.getVitorias() + " vitorias");
+        System.out.println(this.getDerrotas() + " Derrotas");
+        System.out.println(this.getEmpates() + " Empates");
     }
     public void ganharLuta(){
 
